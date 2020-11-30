@@ -8,11 +8,14 @@
 		"@openzeppelin/contracts": "^3.3.0",
 		"@truffle/hdwallet-provider": "^1.2.0",
 		"dotenv": "^8.2.0",
+		"ganache-cli": "^6.12.1",
 		"minimist": "^1.2.5"
 	},
 	"scripts": {
 		"compile": "truffle compile",
-		"kovan": "truffle migrate --network kovan haha lolol",
-		"mainnet": "truffle migrate --network mainnet"
+		"deploy:kovan": "truffle migrate --network kovan",
+		"deploy:mainnet": "truffle migrate --network mainnet",
+		"deploy:fork": "truffle migrate --network fork 0xa0246c9032bC3A600820415aE600c6388619A14D 0x25550Cccbd68533Fa04bFD3e3AC4D09f9e00Fc50 50",
+		"run:fork": "ganache-cli --fork https://mainnet.infura.io/v3/affe173c99ca4c36adfa8d3d0b49be77 --chainId 1"
 	}
 }

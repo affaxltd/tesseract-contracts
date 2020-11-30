@@ -151,7 +151,7 @@ contract TesseractV1 is Ownable {
         );
 
         uint256 tokens = buyToken.balanceOf(address(this));
-        uint256 initialBalance = address(this).balance;
+        uint256 initialBalance = address(this).balance - value;
         (bool success, ) = swapTarget.call{value: value}(swapCallData);
 
         require(success, "Swap failed");
